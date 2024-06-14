@@ -26,11 +26,14 @@ const Task: React.FC<TaskProps> = ({ task }) => {
     e.preventDefault();
     await editTodo({
       id: task.id,
-      text: taskToEdit,
+      text: taskToEdit.trim(),
     });
     setOpenModalEdit(false);
     router.refresh();
   };
+
+  const isInputValid = taskToEdit.trim().length > 0;
+  const isTextChanged = taskToEdit !== task.text;
 
   const handleDeletTask = async (id: string) => {
     await deleteTodo(id);
@@ -68,7 +71,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
                 placeholder="Type here"
                 className="input input-bordered w-full max-w-full font-normal"
               />
-              <button type="submit" className="btn">
+              <button
+                type="submit"
+                className="btn"
+                disabled={!isInputValid || !isTextChanged}
+              >
                 Change
               </button>
             </div>
@@ -86,8 +93,11 @@ const Task: React.FC<TaskProps> = ({ task }) => {
               Do you want to delete this task?
             </h3>
             <div className="modal-action">
-              <button onClick={() => handleDeletTask(task.id)} className="btn btn-outline btn-error btn-circle">
-              <FaCheck />
+              <button
+                onClick={() => handleDeletTask(task.id)}
+                className="btn btn-outline btn-error btn-circle"
+              >
+                <FaCheck />
               </button>
             </div>
           </div>

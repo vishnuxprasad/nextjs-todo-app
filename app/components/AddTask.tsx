@@ -18,12 +18,14 @@ const AddTask = () => {
     e.preventDefault();
     await addTodo({
       id: uuidv4(),
-      text: newTaskValue,
+      text: newTaskValue.trim(),
     });
     setNewTaskValue("");
     setModalOpen(false);
     router.refresh();
   };
+
+  const isInputValid = newTaskValue.trim().length > 0;
 
   return (
     <div>
@@ -44,7 +46,7 @@ const AddTask = () => {
               placeholder="Type here"
               className="input input-bordered w-full max-w-full"
             />
-            <button type="submit" className="btn">
+            <button type="submit" className="btn" disabled={!isInputValid}>
               Add
             </button>
           </div>
