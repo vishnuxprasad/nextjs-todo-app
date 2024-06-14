@@ -64,24 +64,24 @@ JSON Server will start on http://localhost:3001. You can access the JSON data by
 
 2. **Start the Next.js development server:**
 
-Using npm:
+   Using npm:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
-Using yarn:
+   Using yarn:
 
-    ```bash
-    yarn dev
-    ```
+   ```bash
+   yarn dev
+   ```
     
 Your application should now be running at http://localhost:3000.
 
 ## Usage
 
-- **Add Task:** Click on the "ADD NEW TASK" button, enter the task details, and add.
-- **Edit Task:** Click on the edit icon next to the task, update the task details, and update.
+- **Add Task:** Click on the "ADD NEW TASK" button, enter the task details, and submit.
+- **Edit Task:** Click on the edit icon next to the task, update the task details, and submit.
 - **Delete Task:** Click on the delete icon next to the task to remove it.
 - **Mark Task as Completed:** Check the checkbox next to the task to mark it as completed.
 
