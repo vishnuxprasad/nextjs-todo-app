@@ -15,7 +15,7 @@ This is a simple To-Do application built with Next.js, styled using Tailwind CSS
 - Add, edit, and delete tasks.
 - Mark tasks as completed.
 - Styled using [Tailwind CSS](https://tailwindcss.com/).
-- Custom styling with [DaisyUI](https://daisyui.com/) component library.
+- Custom styling with [daisyUI](https://daisyui.com/) component library.
 - JSON Server for a mock backend ([GitHub](https://github.com/typicode/json-server/tree/v0)).
 - Built with [Next.js](https://nextjs.org/), a React framework.
 
@@ -36,6 +36,7 @@ Follow these steps to set up the project on your local machine:
    ```bash
    git clone https://github.com/vishnuxprasad/nextjs-todo-app.git
    cd nextjs-todo-app
+   ```
 
 2. **Install dependencies:**
 
@@ -43,11 +44,13 @@ Follow these steps to set up the project on your local machine:
 
     ```bash
     npm install
+    ```
 
     Using yarn:
 
     ```bash
     yarn install
+    ```
 
 ## Running the Application
 
@@ -55,6 +58,7 @@ Follow these steps to set up the project on your local machine:
 
     ```bash
     npm run json-server
+    ```
 
 JSON Server will start on http://localhost:3001. You can access the JSON data by navigating to http://localhost:3001/tasks.
 
@@ -64,11 +68,13 @@ Using npm:
 
     ```bash
     npm run dev
+    ```
 
 Using yarn:
 
     ```bash
     yarn dev
+    ```
     
 Your application should now be running at http://localhost:3000.
 
