@@ -1,8 +1,9 @@
 {
-    "tasks": [
-      {
-        "id": "72eab2ab-ea07-48eb-becf-33be49b6825e",
-        "text": "Hey, Welcome to your ToDo list!"
-      }
-    ]
-  }
+  "tasks": [
+    {
+      "id": "72eab2ab-ea07-48eb-becf-33be49b6825e",
+      "text": "Hey, Welcome to your ToDo list!",
+      "completed": false
+    }
+  ]
+}

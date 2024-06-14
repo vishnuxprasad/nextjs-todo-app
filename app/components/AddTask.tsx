@@ -19,6 +19,7 @@ const AddTask = () => {
     await addTodo({
       id: uuidv4(),
       text: newTaskValue.trim(),
+      completed: false,
     });
     setNewTaskValue("");
     setModalOpen(false);
