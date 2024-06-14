@@ -3,10 +3,11 @@
 import { ITask } from "@/types/tasks";
 import React, { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
-import { editTodo } from "@/api";
+import { deleteTodo, editTodo } from "@/api";
 import Modal from "./Modal";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDeleteForever } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 interface TaskProps {
   task: ITask;
@@ -28,6 +29,12 @@ const Task: React.FC<TaskProps> = ({ task }) => {
       text: taskToEdit,
     });
     setOpenModalEdit(false);
+    router.refresh();
+  };
+
+  const handleDeletTask = async (id: string) => {
+    await deleteTodo(id);
+    setOpenModalDelete(false);
     router.refresh();
   };
   return (
@@ -67,9 +74,24 @@ const Task: React.FC<TaskProps> = ({ task }) => {
             </div>
           </form>
         </Modal>
-        <button className="btn btn-ghost btn-xs">
+        <button
+          onClick={() => setOpenModalDelete(true)}
+          className="btn btn-ghost btn-xs"
+        >
           <MdDeleteForever className="text-xl hover:text-red/50" />
         </button>
+        <Modal modalOpen={openModalDelete} setModalOpen={setOpenModalDelete}>
+          <div className="flex flex-col items-center gap-2">
+            <h3 className="text-lg text-bold">
+              Do you want to delete this task?
+            </h3>
+            <div className="modal-action">
+              <button onClick={() => handleDeletTask(task.id)} className="btn btn-outline btn-error btn-circle">
+              <FaCheck />
+              </button>
+            </div>
+          </div>
+        </Modal>
       </th>
     </tr>
   );
